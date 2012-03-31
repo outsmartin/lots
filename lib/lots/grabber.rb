@@ -18,18 +18,20 @@ module Lots
       'http://zoywiki.com' + raid['href']
     end
     all_raids = generalraids + allyraids
-    parsepage all_raids[0..1]
+    parsepage all_raids
   end
   def parsepage list
     list.map do |url|
-      puts url
       page = Nokogiri::HTML open(url)
-      health = page.css('tr:nth-child(6) tr')[1..4].map{|a| Hash[*a.text.split("\n")]}
+      health = page.css('tr:nth-child(6) tr')[1..4].map do |a|
+        Hash[*a.text.split("\n")]
+      end rescue {"special" => "0"}
+
       {
         name: page.css('div tr:nth-child(1) td')[1].text.strip,
         type: page.css('div tr:nth-child(2) td')[1].text.strip,
-        players: page.css('div tr:nth-child(3) td')[0].text.strip,
-        time: page.css('div tr:nth-child(4) td')[0].text.strip,
+        players: page.css('div tr:nth-child(3) td')[0].text.gsub(/[0-9]+/).first,
+        time: page.css('div tr:nth-child(4) td')[0].text.gsub(/[0-9]+/).first,
         url: url,
         :health => health
       }

@@ -1,23 +1,26 @@
-<h1>Listing actions</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @actions.each do |action| %>
-  <tr>
-    <td><%= action.name %></td>
-    <td><%= link_to 'Show', action %></td>
-    <td><%= link_to 'Edit', edit_action_path(action) %></td>
-    <td><%= link_to 'Destroy', action, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Actions</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @actions.each do |action| %>
+      <tr>
+        <td><%= action.id %></td>
+        <td><%= link_to action.name, action_path(action) %></td>
+        <td><%= action.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_action_path(action), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', action_path(action), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Action', new_action_path %>
+<%= link_to 'New', new_action_path, :class => 'btn btn-primary' %>

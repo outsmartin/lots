@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lots</title>
+    <title>Legacy of thousand suns - RaidPlan</title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -33,9 +33,8 @@
           <a class="brand" href="#">Lots</a>
           <div class="container nav-collapse">
             <ul class="nav">
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
+                <li><%= link_to "outsmartin", "http://outsmartin.de/"  %></li>
+                <li><%= link_to "Lots Wiki", "http://http://zoywiki.com/index.php/LotS"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -52,10 +51,9 @@
               <div class="well sidebar-nav">
                 <h3>Sidebar</h3>
                 <ul class="nav nav-list">
-                  <li class="nav-header">Sidebar</li>
-                    <li><%= link_to "Link1", "/path1"  %></li>
-                    <li><%= link_to "Link2", "/path2"  %></li>
-                    <li><%= link_to "Link3", "/path3"  %></li>
+                  <li class="nav-header">Stuff you can do</li>
+                    <li><%= link_to "List of raids", actions_path  %></li>
+                    <li><%= link_to "List of enemys", raids_path  %></li>
                 </ul>
               </div><!--/.well -->
             </div><!--/span-->
@@ -63,7 +61,7 @@
       </div><!--/content-->
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; outsmartin.de 2012</p>
       </footer>
 
     </div> <!-- /container -->

@@ -11,17 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120331140352) do
+ActiveRecord::Schema.define(:version => 20120331190741) do
 
   create_table "actions", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "raid_id"
+    t.datetime "expires"
+    t.decimal  "health_left"
+    t.boolean  "active"
   end
 
   create_table "raids", :force => true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "category"
     t.integer  "players"
     t.datetime "time"
     t.string   "difficulty"

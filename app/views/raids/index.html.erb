@@ -2,18 +2,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th>Name</th>
-      <th>Created at</th>
+      <th>Maximum Players</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @raids.each do |raid| %>
       <tr>
-        <td><%= raid.id %></td>
-        <td><%= link_to raid.name, raid_path(raid) %></td>
-        <td><%= raid.created_at %></td>
+        <td><%= link_to "#{raid.difficulty} #{raid.name}", raid_path(raid) %></td>
+        <td><%= raid.players %></td>
         <td>
           <%= link_to 'Edit', edit_raid_path(raid), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', raid_path(raid), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
