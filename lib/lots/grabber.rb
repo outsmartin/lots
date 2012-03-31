@@ -18,7 +18,7 @@ module Lots
       'http://zoywiki.com' + raid['href']
     end
     all_raids = generalraids + allyraids
-    parsepage all_raids[0]
+    parsepage all_raids[0..1]
   end
   def parsepage list
     list.map do |url|

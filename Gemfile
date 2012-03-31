@@ -23,9 +23,10 @@ group :assets do
 end
 gem 'nokogiri'
 gem 'jquery-rails'
-group :development do
+group :development,:test do
   gem 'guard-rspec'
   gem 'rspec'
+  gem 'rspec-rails'
 end
 
 # To use ActiveModel has_secure_password
