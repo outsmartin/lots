@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120331190741) do
+ActiveRecord::Schema.define(:version => 20120331201633) do
 
   create_table "actions", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120331190741) do
     t.datetime "expires"
     t.decimal  "health_left"
     t.boolean  "active"
+    t.string   "url"
   end
 
   create_table "raids", :force => true do |t|

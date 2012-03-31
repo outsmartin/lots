@@ -23,6 +23,8 @@ group :assets do
 end
 gem 'nokogiri'
 gem 'jquery-rails'
+gem 'formtastic'
+gem 'haml-rails'
 group :development,:test do
   gem 'guard-rspec'
   gem 'rspec'
