@@ -1,4 +1,8 @@
 Lots::Application.routes.draw do
+  resources :raids
+
+  resources :actions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
