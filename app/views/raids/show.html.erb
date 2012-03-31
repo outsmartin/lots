@@ -1,0 +1,42 @@
+<h1>/Raid</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @raid.name %>
+</p>
+
+<p>
+  <b>Type</b><br>
+  <%= @raid.type %>
+</p>
+
+<p>
+  <b>Players</b><br>
+  <%= @raid.players %>
+</p>
+
+<p>
+  <b>Time</b><br>
+  <%= @raid.time %>
+</p>
+
+<p>
+  <b>Difficulty</b><br>
+  <%= @raid.difficulty %>
+</p>
+
+<p>
+  <b>Url</b><br>
+  <%= @raid.url %>
+</p>
+
+<p>
+  <b>Health</b><br>
+  <%= @raid.health %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', raids_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_raid_path(@raid), :class => 'btn' %>
+  <%= link_to 'Delete', raid_path(@raid), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
