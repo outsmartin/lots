@@ -1,0 +1,21 @@
+%p
+  %strong= t("activerecord.attributes.encounter.url", :default => t("activerecord.labels.url", :default => "Url")) + ":"
+  %br
+  = @encounter.url
+%p
+  %strong= t("activerecord.attributes.encounter.raid_id", :default => t("activerecord.labels.raid_id", :default => "Raid")) + ":"
+  %br
+  = @encounter.raid_id
+%p
+  %strong= t("activerecord.attributes.encounter.health", :default => t("activerecord.labels.health", :default => "Health")) + ":"
+  %br
+  = @encounter.health
+%p
+  %strong= t("activerecord.attributes.encounter.started_at", :default => t("activerecord.labels.started_at", :default => "Started at")) + ":"
+  %br
+  = @encounter.started_at
+
+.form-actions
+  = link_to "Back", encounters_path, :class => 'btn'
+  = link_to "Edit", edit_encounter_path(@encounter), :class => 'btn'
+  = link_to "Delete", encounter_path(@encounter), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'

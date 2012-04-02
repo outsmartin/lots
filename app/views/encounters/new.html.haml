@@ -1,0 +1,6 @@
+= semantic_form_for @encounter, validate: true  do |f|
+  = f.input "url", label: "Kongregate Url"
+  = f.input :health
+  #slider
+  = f.input :started_at, as: :string
+  = f.buttons

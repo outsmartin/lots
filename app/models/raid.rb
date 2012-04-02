@@ -1,7 +1,7 @@
 require 'lots/grabber'
 include Lots
 class Raid < ActiveRecord::Base
-  belongs_to :action
+  has_many :encounters
   validates_uniqueness_of :name, :scope => [:difficulty]
   def self.fetch
     grabber
@@ -20,5 +20,8 @@ class Raid < ActiveRecord::Base
         r.save
       end
     end
+  end
+  def to_s
+    self.difficulty + ' ' + self.name
   end
 end
