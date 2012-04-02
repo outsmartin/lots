@@ -6,4 +6,10 @@ class Encounter < ActiveRecord::Base
   def raid_name
     self.raid.to_s
   end
+  def raid_players
+    self.raid.players
+  end
+  def name
+    self.raid.name
+  end
 end

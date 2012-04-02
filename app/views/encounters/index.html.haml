@@ -1,6 +1,12 @@
-%h1 Encounters
+%h1 Active Raids
 =table_for @encounters do
-  -column :raid_name
-  -column :url
-  -column :id
+  -column :url, title: "Link to Kongregate",:callback => lambda do |title|
+    -link_to "Link",title
+  -column :health,title: "Last seen Health Percentage"
+  -column :raid,title: "Max Health",:raid_callback => lambda do |raid|
+    -raid.health
+  -column :id,:title => "Name" ,:callback => lambda do |enc|
+    - link_to Encounter.find(enc).name,encounter_path(enc)
+  -column :raid,:title => "Target details", :raid_callback => lambda do |raid|
+    -link_to raid.name, raid_path(raid)
 
