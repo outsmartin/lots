@@ -13,17 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120402101740) do
 
-  create_table "actions", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "raid_id"
-    t.datetime "expires"
-    t.decimal  "health_left"
-    t.boolean  "active"
-    t.string   "url"
-  end
-
   create_table "encounters", :force => true do |t|
     t.string   "url"
     t.integer  "raid_id"
@@ -35,11 +24,10 @@ ActiveRecord::Schema.define(:version => 20120402101740) do
 
   create_table "raids", :force => true do |t|
     t.string   "name"
-    t.string   "category"
     t.integer  "players"
     t.datetime "time"
-    t.string   "difficulty"
-    t.string   "url"
+    t.string   "urlname"
+    t.integer  "difficulty"
     t.integer  "health"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

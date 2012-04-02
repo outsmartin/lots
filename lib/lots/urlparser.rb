@@ -21,21 +21,9 @@ module Lots
     find_raid parsed.query
     end
     def find_raid query
-      name = query.scan(/boss=([a-z]+)&/).flatten.first
-      diff = query.scan(/difficulty=([0-9])&/).flatten.first
-      case diff
-      when 1
-        diff = "Normal"
-      when 2
-        diff = "Hard"
-      when 3
-        diff = "Legendary"
-      when 4
-        diff = "Nightmare"
-      else
-        diff = "Special"
-      end
-      @raid = Raid.where("name like ?","%#{name}%").where("difficulty = ?",diff).first
+      name = query.scan(/boss=([a-z_]+)&/).flatten.first
+      diff = query.scan(/difficulty=([0-9])&/).flatten.first.to_i - 1
+      @raid = Raid.find_by_urlname_and_difficulty(name,diff)
     end
   end
 end

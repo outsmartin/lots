@@ -4,9 +4,9 @@ require 'json'
 module Lots
   ALLIANCE = 'http://zoywiki.com/index.php/LotS/raids/alliance'
   GENERAL = 'http://zoywiki.com/index.php/LotS/raids/general'
-  DATAPATH = 'data.json'
+  DATAPATH = 'lib/lots/data.json'
   def grabber
-   data = JSON.parse open(DATAPATH)
+   data = JSON.parse open(DATAPATH).read
    data.map do |d|
     i = d[1]
     name = i["name"]

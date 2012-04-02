@@ -8,20 +8,35 @@ class Raid < ActiveRecord::Base
   end
   def self.import data
     data.each do |d|
-      d[:health].each do |hash|
+      [1,1.25,1.6,2].each_with_index do |percent,diff|
         r = Raid.new
         r.name = d[:name]
-        r.category = d[:type]
         r.players = d[:players].to_i
         r.time = d[:time].to_i
-        r.url = d[:url]
-        r.difficulty = hash.first.first
-        r.health = hash.first[1].gsub(',','').to_i
+        r.difficulty = diff
+        r.urlname = d[:urlname]
+        r.health = (d[:health].to_i * percent).to_i
         r.save
       end
     end
   end
   def to_s
-    self.difficulty + ' ' + self.name
+    self.difficulty_humanized + ' ' + self.name
   end
+  def difficulty_humanized
+    case self.difficulty
+    when 1
+      diff = "Normal"
+    when 2
+      diff = "Hard"
+    when 3
+      diff = "Legendary"
+    when 4
+      diff = "Nightmare"
+    else
+      diff = "Special"
+    end
+    diff
+  end
+
 end
