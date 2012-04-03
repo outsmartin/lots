@@ -1,3 +1,4 @@
 port: 4001
 daemonize: true
 environment: production
+wait: 20
