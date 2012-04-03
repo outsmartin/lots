@@ -12,4 +12,6 @@ $ ->
       $("#encounter_health").val ui.value + "%"
 
   $("#encounter_health").val $("#slider").slider("value") + "%"
-  $("#encounter_started_at").datetimepicker()
+  $("#encounter_started_at").datetimepicker
+    dateFormat: 'dd.mm.yy'
+
