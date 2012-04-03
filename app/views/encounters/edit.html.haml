@@ -1,1 +1,6 @@
-= render :partial => "form"
+%h2 Raid health has changed?
+
+= semantic_form_for @encounter,html: {:class =>"enc_edit"},validate: true  do |f|
+  = f.input :health
+  #slider
+  = f.buttons

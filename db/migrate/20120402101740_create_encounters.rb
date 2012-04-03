@@ -3,7 +3,7 @@ class CreateEncounters < ActiveRecord::Migration
     create_table :encounters do |t|
       t.string :url
       t.integer :raid_id
-      t.decimal :health
+      t.decimal :health, :default => 100
       t.datetime :started_at
 
       t.timestamps

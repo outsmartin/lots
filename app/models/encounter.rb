@@ -6,6 +6,15 @@ class Encounter < ActiveRecord::Base
   def raid_name
     self.raid.to_s
   end
+  def time_left
+    hours = ((started_at + raid.time.hours - Time.now) / 3600.0).round
+    if hours > raid.time
+      string = hours.to_s + " h"
+    else
+      string = "Raid Expired"
+    end
+    string
+  end
   def raid_players
     self.raid.players
   end

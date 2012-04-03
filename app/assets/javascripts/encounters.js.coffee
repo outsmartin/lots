@@ -2,10 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
+  health = parseInt $("#encounter_health").val()
   $("#slider").slider
     range: "min"
-    value: 100
-    min: 1
+    value: health
+    min: 0
     max: 100
     slide: (event, ui) ->
       $("#encounter_health").val ui.value + "%"

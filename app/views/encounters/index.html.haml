@@ -1,12 +1,18 @@
 %h1 Active Raids
-=table_for @encounters do
-  -column :url, title: "Link to Kongregate",:callback => lambda do |title|
-    -link_to "Link",title
-  -column :health,title: "Last seen Health Percentage"
-  -column :raid,title: "Max Health",:raid_callback => lambda do |raid|
-    -raid.health
+=table_for @encounters, html: {class: "enc_index"} do
   -column :id,:title => "Name" ,:callback => lambda do |enc|
     - link_to Encounter.find(enc).name,encounter_path(enc)
+  -column :url, title: "Link to Kongregate",:callback => lambda do |title|
+    -link_to "Link",title
+  -column :id,:title => "Time left" ,:callback => lambda do |enc|
+    - Encounter.find(enc).time_left
+  -column :health,title: "Health left", callback: lambda do |h|
+    -"#{h} %"
+  -column :raid,title: "Max Health",:raid_callback => lambda do |raid|
+    -number_to_human raid.health
   -column :raid,:title => "Target details", :raid_callback => lambda do |raid|
-    -link_to raid.name, raid_path(raid)
+    - button_to "details", raid_path(raid), method: :get
+  -column :id,:title => "" ,:callback => lambda do |enc|
+    - button_to "edit",edit_encounter_path(enc),:method => :get
+
 

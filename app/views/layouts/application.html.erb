@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legacy of thousand suns - RaidPlan</title>
+    <title>Legacy of a thousand Suns - RaidList</title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -30,11 +30,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Lots</a>
+          <a class="brand" href="/">LotS - RaidList</a>
           <div class="container nav-collapse">
             <ul class="nav">
                 <li><%= link_to "outsmartin", "http://outsmartin.de/"  %></li>
-                <li><%= link_to "Lots Wiki", "http://http://zoywiki.com/index.php/LotS"  %></li>
+                <li><%= link_to "found a bug?", "https://github.com/outsmartin/lots/issues/new"  %></li>
+                <li><%= link_to "LotS Wiki", "http://zoywiki.com/index.php/LotS"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -49,11 +50,11 @@
             </div>
             <div class="span3">
               <div class="well sidebar-nav">
-                <h3>Sidebar</h3>
+                <h3>Raids</h3>
                 <ul class="nav nav-list">
                   <li class="nav-header">Stuff you can do</li>
+                    <li><%= link_to "Add new Raid", new_encounter_path  %></li>
                     <li><%= link_to "List of raids", encounters_path  %></li>
-                    <li><%= link_to "List of enemys", raids_path  %></li>
                 </ul>
               </div><!--/.well -->
             </div><!--/span-->

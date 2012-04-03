@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(:version => 20120402101740) do
   create_table "encounters", :force => true do |t|
     t.string   "url"
     t.integer  "raid_id"
-    t.decimal  "health"
+    t.decimal  "health",     :default => 100.0
     t.datetime "started_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "raids", :force => true do |t|
