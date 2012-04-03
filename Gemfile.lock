@@ -171,6 +171,7 @@ DEPENDENCIES
   nokogiri
   pry
   rails (= 3.2.2)
+  rake
   rspec
   rspec-rails
   sass-rails (~> 3.2.3)
