@@ -12,6 +12,7 @@ $ ->
       $("#encounter_health").val ui.value + "%"
 
   $("#encounter_health").val $("#slider").slider("value") + "%"
-  $("#encounter_started_at").datetimepicker
-    dateFormat: 'dd.mm.yy'
+  $("#encounter_started_at").timepicker
+    hourMax: 500
+    timeFormat: 'h:m'
 

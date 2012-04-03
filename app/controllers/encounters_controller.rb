@@ -43,11 +43,13 @@ class EncountersController < ApplicationController
   include Lots
   def create
     @encounter = Encounter.new(params[:encounter])
-    binding.pry
     parser = Urlparser.new(params[:encounter][:url])
     @encounter.raid = parser.raid
-    @encounter.started_at = Time.parse params[:encounter][:started_at]
+    raid_time_left = params[:encounter][:started_at].split(":")
+    raid_time_left_minutes = raid_time_left[0].to_i * 60 + raid_time_left[1].to_i
+    raid_time_left_total = Time.now - (@encounter.raid.time.hours - raid_time_left_minutes.minutes)
 
+    @encounter.started_at = raid_time_left_total
     respond_to do |format|
       if @encounter.save
         format.html { redirect_to @encounter, notice: 'Encounter was successfully created.' }
