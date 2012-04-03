@@ -43,7 +43,6 @@ class EncountersController < ApplicationController
   include Lots
   def create
     @encounter = Encounter.new(params[:encounter])
-    binding.pry
     parser = Urlparser.new(params[:encounter][:url])
     @encounter.raid = parser.raid
     @encounter.started_at = Time.parse params[:encounter][:started_at]
