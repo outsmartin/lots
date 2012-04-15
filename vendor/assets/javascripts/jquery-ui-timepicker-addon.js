@@ -978,7 +978,7 @@ $.datepicker.formatTime = function(format, time, options) {
 		}
 	});
 
-	tmptime = $.trim(tmptime);
+  tmptime = $.trim(tmptime);
 	return tmptime;
 };
 
