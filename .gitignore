@@ -17,3 +17,4 @@
 .rspec
 *.swp
 /.sass-cache/*
+/public/assets/*

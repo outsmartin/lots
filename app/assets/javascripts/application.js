@@ -5,7 +5,6 @@
 //= require jquery_ujs
 //= require jquery-ui-1.8.18.custom.min
 //= require jquery-ui-timepicker-addon
+//= require rails.validations
 //= require_tree .
 //= require_self
-//= require rails.validations
-//= requir twitter/bootstrap
