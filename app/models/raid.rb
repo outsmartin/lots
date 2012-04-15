@@ -21,10 +21,10 @@ class Raid < ActiveRecord::Base
     end
   end
   def to_s
-    self.difficulty_humanized + ' ' + self.name
+    self.name + ' '+ self.difficulty_humanized
   end
   def difficulty_humanized
-    case self.difficulty
+    case self.difficulty + 1
     when 1
       diff = "Normal"
     when 2

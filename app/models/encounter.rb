@@ -9,6 +9,9 @@ class Encounter < ActiveRecord::Base
   def raid_name
     self.raid.to_s
   end
+  def to_s
+    raid_name
+  end
   def time_left
     hours = ((started_at + raid.time.hours - Time.now) / 3600.0).round
     if hours > 0
