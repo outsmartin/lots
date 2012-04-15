@@ -15,4 +15,4 @@ $ ->
   $("#encounter_started_at").timepicker
     hourMax: 500
     timeFormat: 'h:m'
-
+  $('.enc_index').tablesorter()

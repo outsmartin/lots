@@ -11,6 +11,7 @@
  *= require_self
  *= require_tree .
  *= require formtastic
+ *= require jquery-tablesorter/blue
  *= require jquery-ui-1.8.18.custom
  *= require jquery-ui-timepicker-addon
 */

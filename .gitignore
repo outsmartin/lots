@@ -16,3 +16,4 @@
 .rake_tasks
 .rspec
 *.swp
+/.sass-cache/*
